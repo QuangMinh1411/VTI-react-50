@@ -1,0 +1,17 @@
+Tao mot React project co cac phan tu
+1. Co 3 component: App, GoalList, GoalItem
+data = [
+    {
+        title: 'Teach react',
+        detail:'Grasp the react concept: component, state, router'
+    },
+    {
+        title: 'Practice React',
+        detail:'Reading document and doing exercises'
+    },
+    {
+        title:'Motivate your learning',
+        detail:'Enjoy your coding and take time to rest'
+    }
+]
+render tu data o tren

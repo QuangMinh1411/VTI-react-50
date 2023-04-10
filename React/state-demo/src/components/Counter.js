@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 
-const Counter = () => {
+const Counter = ({ number }) => {
   //   let counter = 0;
-  const [number, setNumber] = useState(1);
   const [counter, setCounter] = useState(0);
   const increment = () => {
     setCounter(function (counter) {
       return counter + number;
     });
-  };
-  const handleChange = (e) => {
-    setNumber(Number(e.target.value));
   };
 
   const decrement = () => {
@@ -23,7 +19,7 @@ const Counter = () => {
   return (
     <>
       <div>{counter}</div>
-      <input type="number" value={number} onChange={handleChange} />
+
       <button onClick={increment}>Increase</button>
       <button onClick={decrement}>Decrease</button>
       <button onClick={reset}>Reset</button>

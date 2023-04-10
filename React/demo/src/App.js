@@ -1,6 +1,7 @@
 import "./App.css";
 import Hello from "./components/Hello";
 import ToDoList from "./components/ToDoList";
+import NavItem from "./components/NavItem";
 function App() {
   // let name = "Quang";
   // const course = {
@@ -26,6 +27,9 @@ function App() {
       content: "Learn running app in multiple platform",
     },
   ];
+  const handleClick = (e) => {
+    console.log("click me");
+  };
 
   // const listElement = tasks.map((task) => (
   //   <ToDo key={task.title} title={task.title} content={task.content} />
@@ -44,6 +48,8 @@ function App() {
         <Hello>
           <p>This is children</p>
         </Hello>
+
+        <NavItem target="https://vnexpress.net" clickMe={handleClick} />
       </ul>
     </div>
   );

@@ -1,0 +1,3 @@
+Tao mot App thuc hien cac phep tinh so hoc nhu trong hinh
+BT1: thay doi gia tri trong o input thi hien ra ket qua
+BT2: su dung option select de tinh cac gia tri

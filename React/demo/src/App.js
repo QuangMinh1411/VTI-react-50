@@ -1,5 +1,5 @@
 import "./App.css";
-// import Hello from "./Hello";
+import Hello from "./components/Hello";
 import ToDoList from "./components/ToDoList";
 function App() {
   // let name = "Quang";
@@ -41,6 +41,9 @@ function App() {
         ))} */}
         {/* {listElement} */}
         <ToDoList tasks={tasks} />
+        <Hello>
+          <p>This is children</p>
+        </Hello>
       </ul>
     </div>
   );

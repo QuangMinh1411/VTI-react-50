@@ -1,23 +1,24 @@
-const sandwich = {
-  bread: "dutch crunch",
-  meat: "tuna",
-  cheese: "swiss",
-  toppings: ["lettuce", "tomato", "mustard"],
-};
+// const sandwich = {
+//   bread: "dutch crunch",
+//   meat: "tuna",
+//   cheese: "swiss",
+//   toppings: ["lettuce", "tomato", "mustard"],
+// };
 
-const { bread, meat } = sandwich;
+// const { bread, meat } = sandwich;
+// console.log(bread, meat);
 
-const regularPerson = {
-  firstName: "Howard",
-  lastName: "John",
-  spouse: {
-    firstName: "Mary",
-    lastName: "Select",
-    pets: {
-      name: "Miu",
-    },
-  },
-};
+// const regularPerson = {
+//   firstName: "Howard",
+//   lastName: "John",
+//   spouse: {
+//     firstName: "Mary",
+//     lastName: "Select",
+//     pets: {
+//       name: "Miu",
+//     },
+//   },
+// };
 // const lordify = ({
 //   spouse: {
 //     pets: { name },
@@ -28,9 +29,9 @@ const regularPerson = {
 // lordify(regularPerson);
 
 // const [, , thirdAnimal] = ["Horse", "Mouse", "Cat"];
-
-// const name = "Taillac";
-// const elevation = 9876;
+// console.log(thirdAnimal);
+const name = "Taillac";
+const elevation = 9876;
 // const funHike = { name, elevation };
 // console.log(funHike);
 // const sound = "Bee";
@@ -47,6 +48,7 @@ const regularPerson = {
 //   },
 // };
 // skier.speed(200);
+// skier.powderYell();
 
 // //Spread operator
 // const peaks = ["Tallac", "Ralston", "Rose"];
@@ -61,13 +63,13 @@ const regularPerson = {
 //   .then(console.log)
 //   .catch(console.error);
 
-const getFakePerson = async () => {
-  let res = await fetch("https://api.randomuser.me/?nat=US&results=1");
-  let { results } = res.json();
-  console.log(results);
-};
+// const getFakePerson = async () => {
+//   let res = await fetch("https://api.randomuser.me/?nat=US&results=1");
+//   let { results } = res.json();
+//   console.log(results);
+// };
 
-getFakePerson();
+// getFakePerson();
 
 // const getPeople = (count) =>
 //   new Promise((resolves, rejects) => {

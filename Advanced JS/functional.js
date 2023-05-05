@@ -11,45 +11,46 @@
 // const insideFn = (logger) => {
 //   logger("They can be sent to other functions as arguments");
 // };
-// //Trien khai ham logger
+// // //Trien khai ham logger
 // insideFn((mes) => console.log(mes + " Hi"));
 
-const createScream = function (logger) {
-  return function (message) {
-    logger(message.toUpperCase() + "!!!");
-  };
-};
+// const createScream = function (logger) {
+//   return function (message) {
+//     logger(message.toUpperCase() + "!!!");
+//   };
+// };
 // const createScream = (logger)=>{
 //   return (message)=>logger(message.toUpperCase() + "!!!");
 // }
-// const createScream = logger=>message=>logger(message.toUpperCase()+'!!!');
+// const createScream = (logger) => (message) =>
+//   logger(message.toUpperCase() + "!!!");
 
-const scream = createScream((message) => console.log(message));
+// const scream = createScream((message) => console.log(message));
 
-scream("functions can be returned from other functions");
-scream("createScream returns a function");
-scream("scream invokes that returned function");
+// scream("functions can be returned from other functions");
+// scream("createScream returns a function");
+// scream("scream invokes that returned function");
 
-const rateColor = (color, rating) => ({
-  ...color,
-  rating,
-});
+// const rateColor = (color, rating) => ({
+//   ...color,
+//   rating,
+// });
 
-const frederick = {
-  name: "Frederick Douglass",
-  canRead: false,
-  canWrite: false,
-};
+// const frederick = {
+//   name: "Frederick Douglass",
+//   canRead: false,
+//   canWrite: false,
+// };
+// frederick.canRead = true;
+// const selfEducate = (person) => ({
+//   ...person,
+//   canRead: true,
+//   canWrite: true,
+//   canRide: true,
+// });
 
-const selfEducate = (person) => ({
-  ...person,
-  canRead: true,
-  canWrite: true,
-  canRide: true,
-});
-
-console.log(selfEducate(frederick));
-console.log(frederick);
+// console.log(selfEducate(frederick));
+// console.log(frederick);
 
 const schools = ["Yorktown", "Washington & Liberty", "Wakefield"];
 const wSchools = schools.filter((school) => school[0] === "W");
@@ -85,6 +86,14 @@ const editName = (oldName, name, arr) =>
       return item;
     }
   });
+
+const fruits = [
+  { name: "apple", quantity: 3 },
+  { name: "orange", quantity: 2 },
+  { name: "lemon", quantity: 4 },
+];
+const newFruits = editName("orange", "pearl", fruits);
+console.log(newFruits);
 
 const ages = [21, 18, 42, 40, 64, 63, 34];
 
@@ -127,9 +136,9 @@ const hashColors = colors.reduce((hash, { id, title, rating }) => {
 
 console.log(hashColors);
 
-// const colors = ["red", "red", "green", "blue", "green"];
+const colors1 = ["red", "red", "green", "blue", "blue", "green"];
 
-// const uniqueColors = colors.reduce(
+// const uniqueColors = colors1.reduce(
 //   (unique, color) =>
 //     unique.indexOf(color) !== -1 ? unique : [...unique, color],
 //   []
@@ -147,19 +156,19 @@ const showUnauthorized = () => console.log("Unauthorized!!!");
 invokeIf(true, showWelcome, showUnauthorized); // "Welcome!!!"
 invokeIf(false, showWelcome, showUnauthorized); // "Unauthorized!!!"
 
-const countdown = (value, fn) => {
+// const countdown = (value, fn) => {
+//   fn(value);
+//   return value > 0 ? countdown(value - 1, fn) : value;
+// };
+
+// countdown(10, (value) => console.log(value));
+
+const countdown = (value, fn, delay = 1000) => {
   fn(value);
-  return value > 0 ? countdown(value - 1, fn) : value;
+  return value > 0
+    ? setTimeout(() => countdown(value - 1, fn, delay), delay)
+    : value;
 };
 
-countdown(10, (value) => console.log(value));
-
-// const countdown = (value, fn, delay = 1000) => {
-//     fn(value);
-//     return value > 0
-//       ? setTimeout(() => countdown(value - 1, fn, delay), delay)
-//       : value;
-//   };
-
-//   const log = value => console.log(value);
-//   countdown(10, log);
+const log = (value) => console.log(value);
+countdown(10, log);

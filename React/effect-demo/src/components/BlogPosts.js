@@ -16,7 +16,7 @@ function BlogPosts() {
       fetchPosts().then((fetchedPosts) => setLoadedPosts(fetchedPosts));
       console.log("test");
     },
-    [loadedPosts]
+    [loadedPosts.length]
   );
 
   return (

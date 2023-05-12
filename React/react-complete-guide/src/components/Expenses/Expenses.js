@@ -5,7 +5,7 @@ import "./Expenses.css";
 import ExpensesList from "./ExpensesList";
 import ExpensesChart from "./ExpensesChart";
 export default function Expense(props) {
-  const [year, setYear] = useState("2020");
+  const [year, setYear] = useState("2021");
   const filterChangeHandler = (selectedYear) => {
     setYear(selectedYear);
   };
@@ -13,18 +13,15 @@ export default function Expense(props) {
     return expense.date.includes(year);
   });
 
-  const removeItem = (id) => {
-    filteredExpenses.items.filter((expense) => {
-      return expense.id !== id;
-    });
+  const deleteItem = (id) => {
+    props.deleteItem(id);
   };
-
   return (
     <div>
       <Card className="expenses">
         <ExpenseFilter selected={year} onChangeFilter={filterChangeHandler} />
         <ExpensesChart expenses={filteredExpenses} />
-        <ExpensesList items={filteredExpenses} handleDelete={removeItem} />
+        <ExpensesList items={filteredExpenses} handleDelete={deleteItem} />
       </Card>
     </div>
   );

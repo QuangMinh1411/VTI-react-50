@@ -31,10 +31,14 @@ function App() {
     });
   };
 
+  const handleDelete = (id) => {
+    let newexpenses = expenses.filter((ex) => ex.id !== id);
+    setExpenses(newexpenses);
+  };
   return (
     <div>
       <NewExpense addExpense={addExpense} />
-      <Expenses items={expenses} />
+      <Expenses items={expenses} deleteItem={handleDelete} />
     </div>
   );
 }

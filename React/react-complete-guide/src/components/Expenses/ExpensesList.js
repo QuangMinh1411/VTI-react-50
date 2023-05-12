@@ -15,7 +15,7 @@ export default function ExpensesList(props) {
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
-            delete={props.handleDelete.bind(null, expense.id)}
+            deleteItem={props.handleDelete.bind(null, expense.id)}
           />
         );
       })}

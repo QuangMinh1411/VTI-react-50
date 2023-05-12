@@ -9,14 +9,14 @@ function App() {
   let result = 0;
   const changeFirst = (e) => {
     setNumbers((prevNums) => ({
+      ...prevNums,
       first: Number(e.target.value),
-      second: prevNums.second,
     }));
   };
 
   const changeSecond = (e) => {
     setNumbers((prevNums) => ({
-      first: prevNums.first,
+      ...prevNums,
       second: +e.target.value,
     }));
   };

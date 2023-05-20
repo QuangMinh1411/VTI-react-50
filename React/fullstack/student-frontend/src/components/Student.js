@@ -17,7 +17,7 @@ function Student({ id, name, address, gender, deleteItem }) {
       <TableCell align="left">{name}</TableCell>
       <TableCell align="left">{address}</TableCell>
       <TableCell align="left">
-        {gender == "MALE" ? <MaleIcon /> : <FemaleIcon />}
+        {gender === "MALE" ? <MaleIcon /> : <FemaleIcon />}
       </TableCell>
       <TableCell align="left">
         <Stack direction="row" spacing={2}>

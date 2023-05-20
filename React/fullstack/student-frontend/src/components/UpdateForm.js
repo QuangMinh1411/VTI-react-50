@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { updateStudent, getStudent } from "./ApiService";
+import { updateStudent, getStudent, createStudent } from "./ApiService";
 import { useNavigate, useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -25,21 +25,31 @@ const UpdateForm = () => {
 
   useEffect(() => {
     getStudent(id).then((res) => {
-      setName(res.data.name);
-      setAddress(res.data.address);
-      setGender(res.data.gender);
+      if (res.data != null) {
+        setName(res.data.name);
+        setAddress(res.data.address);
+        setGender(res.data.gender);
+      }
     });
   }, [id]);
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    updateStudent(id, {
-      name: name,
-      address: address,
-      gender: gender,
-    }).then(() => {
+    if (id > 0) {
+      updateStudent(id, {
+        name: name,
+        address: address,
+        gender: gender,
+      }).then(() => {
+        navigate("/");
+      });
+    } else {
+      createStudent({ name: name, address: address, gender: gender }).then(
+        (res) => {
+          console.log(res.data);
+        }
+      );
       navigate("/");
-    });
+    }
   };
   return (
     <Container>

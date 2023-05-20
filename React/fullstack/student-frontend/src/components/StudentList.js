@@ -42,7 +42,7 @@ const StudentList = () => {
             align="right"
             startIcon={<AddIcon />}
             onClick={() => {
-              navigate("/add");
+              navigate("/update/-1");
             }}
           >
             Add

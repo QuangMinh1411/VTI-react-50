@@ -4,7 +4,7 @@ import classes from "./BlogPosts.module.css";
 
 async function fetchPosts() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const blogPosts = await response.json();
+  const blogPosts = response.json();
   return blogPosts;
 }
 
